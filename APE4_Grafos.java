@@ -36,10 +36,6 @@ public class APE4_Grafos {
         Map<String, Nodo> nodos = new HashMap<>();
         Map<String, List<Arista>> adyacencia = new HashMap<>();
 
-        // ═══════════════════════════════════
-        // TODO 1
-        // Agregar nodo al grafo
-        // ═══════════════════════════════════
         public void agregarNodo(String id, String nombre) {
 
             // Agregar el nodo al grafo
@@ -50,13 +46,15 @@ public class APE4_Grafos {
 
         }
 
-        // ═══════════════════════════════════
-        // TODO 2
-        // Agregar arista no dirigida
-        // ═══════════════════════════════════
         public void agregarArista(String origen, String destino, int peso) {
 
-            // COMPLETE AQUÍ
+            // Conexion origen -> destino
+            adyacencia.get(origen)
+                    .add(new Arista(destino, peso));
+
+            // Conexion destino -> origen
+            adyacencia.get(destino)
+                    .add(new Arista(origen, peso));
 
         }
 
